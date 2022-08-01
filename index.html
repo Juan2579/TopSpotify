@@ -13,13 +13,24 @@
 </head>
 <body>
     <header class="header_container">
-        <section class="header_content">
             <nav class="navbar_container">
-                <img class="navbar_logo" src="./assets/images/logospotify.svg" alt="Spotify Logo">
-                <img class="navbar_menu" src="./assets/icons/menu.svg" alt="Menu icon">
+                <ul class="navbar_mobile">
+                    <li><img class="navbar_logo" src="./assets/images/logospotify.svg" alt="Spotify Logo"></li>
+                    <li>
+                        <button onclick="openNavigation()"><img class="navbar_menu" src="./assets/icons/menu.svg" alt="Menu icon"></button>
+                        <button onclick="closeNavigation()"><img class="navbar_close" src="./assets/icons/close.svg" alt=""></button>
+                    </li>
+                    <ul class="navbar_mobile-hidden">
+                        <li>Top 10 Canciones </li>
+                        <li>Top 10 Álbumes Semanales</li>
+                        <li>Top 10 Artistas Semanales</li>
+                        <li>Acerca de mi</li>
+                    </ul>
+                </ul>
+                
+                
             </nav>
-        </section>
-
+        
         
     </header>
 
@@ -36,10 +47,20 @@
 
         <section class="main_songs">
             <section class="songs_container">
-                <h2>Top 10 Canciones Semanales </h2>
+                <h2>Top 10 Canciones Semanales</h2>
                 <div id="songs" class="songs_content">
                     
                     
+                </div>
+            </section>
+        </section>
+
+        <section class="main_albums">
+            <section class="albums_container">
+                <h2>Top 10 Álbumes Semanales</h2>
+                <div class="albums_content">
+
+
                 </div>
             </section>
         </section>

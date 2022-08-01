@@ -7,24 +7,38 @@
 html{
     font-size: 62.5%;
     font-family: Helvetica;
+    scroll-behavior: smooth;
 }
 
 /* header */
 .header_container{
     width: 100%;
     height: auto;
-    background-color: #000;
+    
 }
-.header_content{
+.navbar_container{
+    position: fixed;
     width: 100%;
     height: auto;
     padding: 10px 0;
+    z-index: 10;
+    background-color: #000;
 }
-.navbar_container{
+.navbar_mobile{
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0 20px;
+    z-index: 1;
+}
+.navbar_mobile button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 .navbar_logo{
     width: 100px;
@@ -34,8 +48,51 @@ html{
     width: 50px;
     height: 35px
 }
+.navbar_close{
+    display: none;
+    width: 50px;
+    height: 35px
+}
 
+.navbar_mobile-hidden{
+    display: none;
+    min-width: 250px;
+    min-height: 200px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 20px;
+    position: absolute;
+    top: 70px;
+    right: -100vw;
+    padding: 20px 0;
+    list-style: none;
+    background: rgb(252 252 252);
+    box-shadow: 0 8px 32px 0 rgb(23 52 139);
+    backdrop-filter: blur( 13px );
+    -webkit-backdrop-filter: blur( 13px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border-radius: 10px;
+    overflow-x: hidden;
+    text-align: center;
+    z-index: 4;
+}
+.shown{
+    display: flex;
+    transform: translateX(-95vw);
+    transition: all 1.5s ease-out;
+}
+.hidden{
+    display: flex;
+    transform: translateX(95vw);
+    transition: all 1.5s ease-in;
+}
 /* main */
+.main_container{
+    width: 100%;
+    height: auto;
+    padding-top: 70px;
+}
 .main_container--background{
     position: relative;
     display: flex;
@@ -133,10 +190,63 @@ html{
     font-weight: 500;
 }
 .song_card img{
-    max-width: 120px;
+    width: 100%;
+    max-width: 150px;
     height: auto;
 }
 .song_card .song_artists{
+    line-height: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: rgb(175, 175, 175);
+}
+
+/*  main albums */
+.main_albums{
+    width: 100%;
+    height: auto;
+    background-color: rgb(27 26 26);
+    padding: 40px 0;
+}
+.albums_container{
+    width: 90%;
+    margin: 0 auto;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.albums_container h2{
+    text-align: center;
+    font-size: 1.6rem;
+}
+.albums_content{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto auto;
+    gap: 30px;
+}
+.album_card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    width: 90%;
+    margin: 0 auto;
+    max-width: 150px;
+    height: auto;
+}
+.album_card .album_name{
+    width: 100%;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+.album_card img{
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+}
+.album_card .album_artist{
     font-size: 1.1rem;
     font-weight: 300;
     color: rgb(175, 175, 175);
