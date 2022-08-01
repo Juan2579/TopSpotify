@@ -21,23 +21,14 @@ async function songs(){
         let count = 1
         const listSongs = tracks.tracks
         
-        for (let i = 0; i < 10; i++) {
-            const element = listSongs[i];
-            for (let j = 0; j < element.artists.length; j++) {
-                const artists = element.artists[j];
-                const photos = element.album.cover.url
-                let templateSongs = `${listSongs.map(song => 
-                    `<div class="song_card">
-                        <p class="song_name">${count++}. ${song.name}</p>
-                        <img src="${song.album.cover[0].url}" alt="">
-                        <p class="song_artists">${song.artists[j].name}, ${song.artists[1]?.name}</p>
-                    </div>`).slice(0,10).join("")
+            let templateSongs = `${listSongs.map(song => 
+                `<div class="song_card">
+                    <p class="song_name">${count++}. ${song.name}</p>
+                    <img src="${song.album.cover[0].url}" alt="">
+                    <p class="song_artists">${song.artists.map(artist => artist.name).join(', ')}</p>
+                </div>`).slice(0,10).join("")
                 }`
-        
-        songsContainer.innerHTML = templateSongs
-            }
-        }
-        
+        songsContainer.innerHTML = templateSongs    
     } catch (error) {
         console.log(error)
     }
