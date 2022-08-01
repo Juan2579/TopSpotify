@@ -1,0 +1,15 @@
+{
+  "name": "spotifytop",
+  "version": "1.0.0",
+  "description": "Top 50 spotify songs of the week",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "JavaScript",
+    "Spotify"
+  ],
+  "author": "Juan Gualdron",
+  "license": "ISC"
+}
