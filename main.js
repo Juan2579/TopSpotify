@@ -16,6 +16,7 @@ const optionsMain = {
 		'X-RapidAPI-Host': 'spotify-scraper.p.rapidapi.com'
 	}
 };
+
 //dom
 const songsContainer = document.querySelector(".songs_content")
 
@@ -50,13 +51,7 @@ const closeNavigation = () => {
 }
 //end of navbar
 
-
-// const fetchData = async (urlApi) => {
-//     const response = await fetch(urlApi, options);
-//     const data = await response.json();
-//     return data
-// }
-
+//api functions
 async function songs(){
     try {
         const response = await fetch(`${API}/tracks/top`, optionsMain)
@@ -68,7 +63,7 @@ async function songs(){
                 `<div class="song_card">
                 <a href="${song.shareUrl}" target="_blank">
                     <p class="song_name">${count++}. ${song.name}</p>
-                    <img src="${song.album.cover[0].url}" alt="">
+                    <img src="${song.album.cover[0].url}" alt="${song.name}">
                     <p class="song_artists">${song.artists?.map(artist => artist.name).join(', ')}</p>
                 </a>
                 </div>`).slice(0,10).join("")
@@ -91,7 +86,7 @@ async function albums(){
             `<div class="album_card">
                 <a href="${album.shareUrl}" target="_blank">
                 <p class="album_name">${count++}. ${album?.name}</p>
-                <img src="${album?.cover[0].url}"/>
+                <img src="${album?.cover[0].url}" alt="${album?.name}</"/>
                 <p class="album_artist">${album?.artists[0].name}</p>
                 </a>
             </div>`).slice(0,10).join("")
@@ -104,12 +99,6 @@ async function albums(){
     }
 
 }
-
-// async function artistsNames(artistId){
-//     const responseArtistsNames = await fetch(`${APIartists}${artistId}`, optionsArtists)
-//     const dataArtists = await responseArtistsNames.json();
-//     return dataArtists.name
-// }
 
 async function artists(){
     try {
@@ -131,7 +120,7 @@ async function artists(){
             `<div class="artists_card">
                 <a href="${artist.uri}" target="_blank">
                 <p class="artist_name">${count++}. ${artist.name} </p>
-                <img src="${artist.images[0].url}"/>
+                <img src="${artist.images[0].url}" alt="${artist.name}"/>
                 </a>
             </div>`).slice(0,10).join("")
             
@@ -163,4 +152,3 @@ async function create(){
     
 }
 create()
-

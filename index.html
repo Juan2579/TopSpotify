@@ -28,6 +28,12 @@
                         <li><a href="">Acerca de mi</a></li>
                     </ul>
                 </ul>
+                <ul class="navbar_desktop">
+                    <li><a href="#songs">CANCIONES</a></li>
+                    <li><a href="#albums">ÁLBUMES</a></li>
+                    <li><a href="#artists">ARTISTAS</a></li>
+                    <li><a href="#contact">CONTACTO</a></li>
+                </ul>
                 
                 
             </nav>
@@ -37,7 +43,10 @@
 
     <main class="main_container">
         <div class="main_container--background">
-            <img class="main_background" src="./assets/images/bgMobile.jpg" alt="">
+            <picture class="main_background">
+                <source media="(min-width: 720px)" srcset="./assets/images/bgDesktop.jpg" alt="Spotify Background">
+                <img class="main_background" src="./assets/images/bgMobile.jpg" alt="Spotify Background">
+            </picture>
             
             <section class="main_content">
                <h1>La música lo es todo</h1>
@@ -78,7 +87,15 @@
     </main>
     
 
-    <footer>
+    <footer id="contact" class="footer_container">
+        <section class="footer_content">
+            <p>Desarrollado por Juan Gualdrón</p>
+            <div class="footer_logos">
+                <a href="https://github.com/Juan2579" target="_blank"><img src="./assets/icons/github.svg" alt=""></a>
+                <a href="https://twitter.com/JuanDavidGuald6" target="_blank"><img src="./assets/icons/twitter.svg" alt=""></a>
+                <a href=""><img src="./assets/icons/instagram.svg" alt=""></a>
+            </div>
+        </section>
 
     </footer>
 
