@@ -137,12 +137,12 @@ function executeSongs(){
 }
 function executeAlbums() {
     return new Promise(resolve => setTimeout(
-        albums, 3000)
+        albums, 4000)
     )
 }
 function executeArtists() {
     return new Promise(resolve => setTimeout(
-        artists, 5000)
+        artists, 6000)
     )
 }
 async function create(){ 
