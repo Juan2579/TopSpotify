@@ -228,7 +228,7 @@ html{
 .main_albums{
     width: 100%;
     height: auto;
-    background-color: rgb(8, 7, 7);
+    background-color: rgb(14, 12, 12);
     padding: 40px 0;
 }
 .albums_container{
@@ -285,4 +285,64 @@ html{
     font-size: 1.1rem;
     font-weight: 300;
     color: rgb(175, 175, 175);
+}
+
+/* main artists */
+
+.main_artists{
+    width: 100%;
+    height: auto;
+    background-color: rgb(27 26 26);
+    padding: 40px 0;
+}
+.artists_container{
+    width: 90%;
+    margin: 0 auto;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.artists_container h2{
+    text-align: center;
+    font-size: 1.6rem;
+}
+.artists_content{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto auto;
+    gap: 30px;
+}
+.artists_card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    width: 90%;
+    margin: 0 auto;
+    min-width: 120px;
+    max-width: 150px;
+    height: auto;
+}
+.artists_card a{
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    margin: 0 auto;
+    max-width: 150px;
+    height: auto;
+    font-size: 1.3rem;
+}
+.artists_card a .artists_name{
+    width: 100%;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+.artists_card a img{
+    width: 100%;
+    min-width: 120px;
+    height: auto;
 }
