@@ -10,6 +10,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/faviconSpotify.svg"> 
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./css/desktop.css" media="(min-width: 720px)">
+    
 </head>
 <body>
     <header class="header_container">
@@ -21,10 +22,10 @@
                         <button onclick="closeNavigation()"><img class="navbar_close" src="./assets/icons/close.svg" alt=""></button>
                     </li>
                     <ul class="navbar_mobile-hidden">
-                        <li>Top 10 Canciones </li>
-                        <li>Top 10 Álbumes Semanales</li>
-                        <li>Top 10 Artistas Semanales</li>
-                        <li>Acerca de mi</li>
+                        <li><a href="#songs">Top 10 Canciones</a></li>
+                        <li><a href="#albums">Top 10 Álbumes Semanales</a></li>
+                        <li><a href="">Top 10 Artistas Semanales</a></li>
+                        <li><a href="">Acerca de mi</a></li>
                     </ul>
                 </ul>
                 
@@ -41,14 +42,14 @@
             <section class="main_content">
                <h1>La música lo es todo</h1>
                <p>Encuentra los artistas, albúmes y canciones del momento</p>
-               <a href="#songs">Empieza ahora <span> <img src="./assets/icons/arrow-down.svg" alt="Arrow Icon"></span></a>
+               <a href="#songs_container">Empieza ahora <span> <img src="./assets/icons/arrow-down.svg" alt="Arrow Icon"></span></a>
             </section>
         </div>
 
-        <section class="main_songs">
+        <section id="songs_container" class="main_songs">
             <section class="songs_container">
-                <h2>Top 10 Canciones Semanales</h2>
-                <div id="songs" class="songs_content">
+                <h2 id="songs">Top 10 Canciones Semanales</h2>
+                <div  class="songs_content">
                     
                     
                 </div>
@@ -57,11 +58,17 @@
 
         <section class="main_albums">
             <section class="albums_container">
-                <h2>Top 10 Álbumes Semanales</h2>
+                <h2 id="albums">Top 10 Álbumes Semanales</h2>
                 <div class="albums_content">
 
 
                 </div>
+            </section>
+        </section>
+
+        <section class="main_artists">
+            <section class="artits_container">
+
             </section>
         </section>
     </main>

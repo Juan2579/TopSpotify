@@ -55,36 +55,47 @@ html{
 }
 
 .navbar_mobile-hidden{
-    display: none;
-    min-width: 250px;
-    min-height: 200px;
+    display: inline-block;
+    width: 100vw;
+    min-height: 220px;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     gap: 20px;
     position: absolute;
-    top: 70px;
-    right: -100vw;
-    padding: 20px 0;
+    top: 62.4px;
+    left: 103.5vw;
+    padding: 20px 0 10px 0;
     list-style: none;
-    background: rgb(252 252 252);
-    box-shadow: 0 8px 32px 0 rgb(23 52 139);
-    backdrop-filter: blur( 13px );
-    -webkit-backdrop-filter: blur( 13px );
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
-    border-radius: 10px;
+    background: #000;
     overflow-x: hidden;
     text-align: center;
     z-index: 4;
 }
+.navbar_mobile-hidden li{
+    width: 100%;
+    max-height: 45px;
+    padding-bottom: 10px;
+    font-weight: 700;
+    font-size: 1.3rem;
+    border-bottom: 1px solid rgb(59, 58, 58);
+}
+.navbar_mobile-hidden li a{
+    text-decoration: none;
+    color: #fff;
+}
+.navbar_mobile-hidden li:last-child{
+    border-bottom: none;
+    padding-bottom: 0px;
+}
 .shown{
     display: flex;
-    transform: translateX(-95vw);
+    transform: translateX(-106vw);
     transition: all 1.5s ease-out;
 }
 .hidden{
     display: flex;
-    transform: translateX(95vw);
+    transform: translateX(100vw);
     transition: all 1.5s ease-in;
 }
 /* main */
@@ -153,7 +164,7 @@ html{
 .main_songs{
     width: 100%;
     height: auto;
-    background-color: #000;
+    background-color: rgb(27 26 26);
     padding: 40px 0;
 }
 .songs_container{
@@ -184,7 +195,19 @@ html{
     max-width: 150px;
     height: auto;
 }
-.song_card .song_name{
+.song_card a{
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    margin: 0 auto;
+    max-width: 150px;
+    height: auto;
+
+}
+.song_card a .song_name{
     width: 100%;
     font-size: 1.3rem;
     font-weight: 500;
@@ -194,7 +217,7 @@ html{
     max-width: 150px;
     height: auto;
 }
-.song_card .song_artists{
+.song_card a .song_artists{
     line-height: 1.5rem;
     font-size: 1.1rem;
     font-weight: 300;
@@ -205,7 +228,7 @@ html{
 .main_albums{
     width: 100%;
     height: auto;
-    background-color: rgb(27 26 26);
+    background-color: rgb(8, 7, 7);
     padding: 40px 0;
 }
 .albums_container{
@@ -236,17 +259,29 @@ html{
     max-width: 150px;
     height: auto;
 }
-.album_card .album_name{
+.album_card a{
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    margin: 0 auto;
+    max-width: 150px;
+    height: auto;
+
+}
+.album_card a .album_name{
     width: 100%;
     font-size: 1.3rem;
     font-weight: 500;
 }
-.album_card img{
+.album_card a img{
     width: 100%;
     max-width: 150px;
     height: auto;
 }
-.album_card .album_artist{
+.album_card a .album_artist{
     font-size: 1.1rem;
     font-weight: 300;
     color: rgb(175, 175, 175);

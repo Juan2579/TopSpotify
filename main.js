@@ -33,28 +33,31 @@ const closeNavigation = () => {
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': '2f1e30ad67msh7626fc9efeaaa81p13d475jsn2f50be4152a0',
+		'X-RapidAPI-Key': 'c723e9296dmshc409b9d1e1ad335p1c4721jsnac0711b1ef90',
 		'X-RapidAPI-Host': 'spotify-scraper.p.rapidapi.com'
 	}
 };
 
-const fetchData = async (urlApi) => {
-    const response = await fetch(urlApi, options);
-    const data = await response.json();
-    return data
-}
+// const fetchData = async (urlApi) => {
+//     const response = await fetch(urlApi, options);
+//     const data = await response.json();
+//     return data
+// }
 
 async function songs(){
     try {
-        const tracks = await fetchData(`${API}/tracks/top`)
+        const response = await fetch(`${API}/tracks/top`, options)
+        const tracks = await response.json();
         let count = 1
         const listSongs = tracks?.tracks
         
             let templateSongs = `${listSongs.map(song => 
                 `<div class="song_card">
+                <a href="${song.shareUrl}" target="_blank">
                     <p class="song_name">${count++}. ${song.name}</p>
                     <img src="${song.album.cover[0].url}" alt="">
                     <p class="song_artists">${song.artists?.map(artist => artist.name).join(', ')}</p>
+                </a>
                 </div>`).slice(0,10).join("")
                 }`
         songsContainer.innerHTML = templateSongs    
@@ -66,18 +69,20 @@ async function songs(){
 async function albums(){
     
     try {
-        const albums = await fetchData(`${API}/albums/top`)
+        const response = await fetch(`${API}/albums/top`, options)
+        const albums = await response.json();
         let count = 1
         const listAlbums = albums?.albums
 
         let templateAlbums = `${listAlbums.map(album => 
             `<div class="album_card">
+                <a href="${album.shareUrl}" target="_blank">
                 <p class="album_name">${count++}. ${album?.name}</p>
                 <img src="${album?.cover[0].url}"/>
                 <p class="album_artist">${album?.artists[0].name}</p>
-
+                </a>
             </div>`).slice(0,10).join("")
-
+            
         }`
         albumsContainer.innerHTML = templateAlbums
 
@@ -86,11 +91,20 @@ async function albums(){
     }
 
 }
-async function create(){
-    setTimeout(
-        await songs(), 1000
+function executeSongs(){
+    return new Promise(resolve => setTimeout(
+        songs, 1000)
     )
-    await albums()
+}
+function executeAlbums() {
+    return new Promise(resolve => setTimeout(
+        albums, 5000)
+    )
+}
+async function create(){ 
+    executeSongs()
+    executeAlbums()
+    
 }
 create()
 
