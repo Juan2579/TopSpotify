@@ -12,7 +12,7 @@ const optionsArtists = {
 const optionsMain = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': 'c723e9296dmshc409b9d1e1ad335p1c4721jsnac0711b1ef90',
+		'X-RapidAPI-Key': '08cc8cb65dmshc3f2c86d7ac95aap13ad47jsn2869be0f504e',
 		'X-RapidAPI-Host': 'spotify-scraper.p.rapidapi.com'
 	}
 };
